@@ -44,7 +44,7 @@ There are three nested scopes inherent in this code example. It may be helpful t
 
 **Bubble 3** encompasses the scope of `bar`, and it includes just one identifier: `c`.
 
-Scope bubbles are defined by where the blocks of scope are written, which one is nested inside the other, etc. In the next chapter, we'll discuss different units of scope, but for now, let's just assume that each function creates a new bubble of scope.
+> :bangbang: Scope bubbles are defined by where the blocks of scope are written, which one is nested inside the other, etc. In the next chapter, we'll discuss different units of scope, but for now, let's just assume that each function creates a new bubble of scope.
 
 The bubble for `bar` is entirely contained within the bubble for `foo`, because (and only because) that's where we chose to define the function `bar`.
 
