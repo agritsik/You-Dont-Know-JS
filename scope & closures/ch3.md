@@ -7,7 +7,7 @@ But what exactly makes a new bubble? Is it only the function? Can other structur
 
 ## Scope From Functions
 
-The most common answer to those questions is that JavaScript has function-based scope. That is, each function you declare creates a bubble for itself, but no other structures create their own scope bubbles. As we'll see in just a little bit, this is not quite true.
+> :bangbang: The most common answer to those questions is that JavaScript has function-based scope. That is, each function you declare creates a bubble for itself, but no other structures create their own scope bubbles. As we'll see in just a little bit, this is not quite true.
 
 But first, let's explore function scope and its implications.
 
