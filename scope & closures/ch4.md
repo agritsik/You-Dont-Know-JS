@@ -41,7 +41,7 @@ Unfortunately, both guesses are incorrect. `undefined` is the output.
 
 To answer this question, we need to refer back to Chapter 1, and our discussion of compilers. Recall that the *Engine* actually will compile your JavaScript code before it interprets it. Part of the compilation phase was to find and associate all declarations with their appropriate scopes. Chapter 2 showed us that this is the heart of Lexical Scope.
 
-So, the best way to think about things is that all declarations, both variables and functions, are processed first, before any part of your code is executed.
+> :bangbang: So, the best way to think about things is that all declarations, both variables and functions, are processed first, before any part of your code is executed.
 
 When you see `var a = 2;`, you probably think of that as one statement. But JavaScript actually thinks of it as two statements: `var a;` and `a = 2;`. The first statement, the declaration, is processed during the compilation phase. The second statement, the assignment, is left **in place** for the execution phase.
 
@@ -71,7 +71,7 @@ a = 2;
 
 So, one way of thinking, sort of metaphorically, about this process, is that variable and function declarations are "moved" from where they appear in the flow of the code to the top of the code. This gives rise to the name "Hoisting".
 
-In other words, **the egg (declaration) comes before the chicken (assignment)**.
+> :bangbang: In other words, **the egg (declaration) comes before the chicken (assignment)**.
 
 **Note:** Only the declarations themselves are hoisted, while any assignments or other executable logic are left *in place*. If hoisting were to re-arrange the executable logic of our code, that could wreak havoc.
 
@@ -85,9 +85,9 @@ function foo() {
 }
 ```
 
-The function `foo`'s declaration (which in this case *includes* the implied value of it as an actual function) is hoisted, such that the call on the first line is able to execute.
+> :bangbang: The function `foo`'s declaration (which in this case *includes* the implied value of it as an actual function) is hoisted, such that the call on the first line is able to execute.
 
-It's also important to note that hoisting is **per-scope**. So while our previous snippets were simplified in that they only included global scope, the `foo(..)` function we are now examining itself exhibits that `var a` is hoisted to the top of `foo(..)` (not, obviously, to the top of the program). So the program can perhaps be more accurately interpreted like this:
+> :bangbang: It's also important to note that hoisting is **per-scope**. So while our previous snippets were simplified in that they only included global scope, the `foo(..)` function we are now examining itself exhibits that `var a` is hoisted to the top of `foo(..)` (not, obviously, to the top of the program). So the program can perhaps be more accurately interpreted like this:
 
 ```js
 function foo() {
@@ -101,7 +101,7 @@ function foo() {
 foo();
 ```
 
-Function declarations are hoisted, as we just saw. But function expressions are not.
+> :bangbang: Function declarations are hoisted, as we just saw. But function expressions are not.
 
 ```js
 foo(); // not ReferenceError, but TypeError!
@@ -194,7 +194,7 @@ function foo() {
 
 While this all may sound like nothing more than interesting academic trivia, it highlights the fact that duplicate definitions in the same scope are a really bad idea and will often lead to confusing results.
 
-Function declarations that appear inside of normal blocks typically hoist to the enclosing scope, rather than being conditional as this code implies:
+> :bangbang: Function declarations that appear inside of normal blocks typically hoist to the enclosing scope, rather than being conditional as this code implies:
 
 ```js
 foo(); // "b"
@@ -208,7 +208,7 @@ else {
 }
 ```
 
-However, it's important to note that this behavior is not reliable and is subject to change in future versions of JavaScript, so it's probably best to avoid declaring functions in blocks.
+> :bangbang: However, it's important to note that this behavior is not reliable and is subject to change in future versions of JavaScript, so it's probably best to avoid declaring functions in blocks.
 
 ## Review (TL;DR)
 
